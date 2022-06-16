@@ -48,7 +48,9 @@ services:
             timeout: 5s
 networks:
     sail:
+        name: test-app
         driver: bridge
+        external: true
 volumes:
     sail-mysql:
         driver: local

@@ -2,7 +2,6 @@
 
 namespace App\Jobs;
 
-use App\Models\Product;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -10,7 +9,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 
-class ProductUpdated implements ShouldQueue
+class ProductLiked implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -32,12 +31,6 @@ class ProductUpdated implements ShouldQueue
      */
     public function handle()
     {
-        $product = Product::find($this->data['id']);
-        $product->update([
-            'title' => $this->data['title'],
-            'image' => $this->data['image'],
-            'created_at' => $this->data['created_at'],
-            'updated_at' => $this->data['updated_at'],
-        ]);
+        //
     }
 }
